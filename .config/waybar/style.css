@@ -1,0 +1,133 @@
+@import "colors-waybar.css";
+
+/* 🔹 Global Waybar Settings */
+* {
+    font-family: "Fira Code";
+    font-weight: bolder;
+    font-size: 12px;
+    min-height: 0;
+    border: none;
+}
+
+/* 🔹 Waybar Background */
+window#waybar {
+    background: @background;
+    color: @foreground;
+    border-bottom: 1px solid @color1;
+    padding: 2px;
+}
+
+/* 🟢 Modules (Minimal Padding, Small Size) */
+#workspaces,
+#pulseaudio,
+#cpu,
+#memory,
+#network,
+#clock,
+#tray {
+    background: @color0;
+    color: @foreground;
+    padding: 2px 6px;
+    margin: 2px;
+    border-radius: 5px;
+    transition: background 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* 🔹 Hover Effect */
+#workspaces:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#clock:hover,
+#tray:hover {
+    background: @color3;
+    color: @background;
+    box-shadow: 0px 0px 4px @color3;
+}
+
+/* 🎯 Workspaces (Compact, Minimalist) */
+#workspaces {
+    padding: 2px 4px;
+}
+
+#workspaces button {
+    background: @color0;
+    color: @foreground;
+    padding: 2px 5px;
+    margin: 2px;
+    border-radius: 4px;
+    transition: background 0.15s ease-in-out;
+}
+
+/* Occupied Workspaces */
+#workspaces button.occupied {
+    background: @color9;
+    color: @foreground;
+    box-shadow: inset 0px 0px 3px @color9;
+}
+
+/* Empty Workspaces */
+#workspaces button.empty {
+    background: transparent;
+    color: @color8;
+}
+
+/* Focused Workspaces */
+#workspaces button.focused {
+    background: @color10;
+    color: @background;
+    font-weight: bold;
+    border: 1px solid @color10;
+    box-shadow: 0px 0px 5px @color10;
+}
+
+/* Urgent Workspaces */
+#workspaces button.urgent {
+    background: @color12;
+    color: @background;
+    animation: urgent-pulse 1s infinite;
+}
+
+@keyframes urgent-pulse {
+    0% { background: @color12; }
+    50% { background: @color13; }
+    100% { background: @color12; }
+}
+
+/* Visible Workspaces */
+#workspaces button.visible {
+    background: @color14;
+    color: @background;
+    box-shadow: inset 0px 0px 3px @color15;
+}
+
+/* 🔹 Clock Module (Minimalist) */
+#clock {
+    background: @color0;
+    color: @foreground;
+}
+
+/* 🔹 Network Module */
+#network {
+    background: @color0;
+    color: @foreground;
+}
+
+/* 🔹 CPU & Memory */
+#cpu, #memory {
+    background: @color0;
+    color: @foreground;
+}
+
+/* 🔹 PulseAudio */
+#pulseaudio {
+    background: @color0;
+    color: @foreground;
+}
+
+/* 🔹 Tray */
+#tray {
+    background: @color0;
+    color: @foreground;
+}
