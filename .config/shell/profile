@@ -14,6 +14,7 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export KODI_DATA="$XDG_DATA_HOME/kodi"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export PATH=$PATH:$HOME/.local/bin
+export GOOGLE_AI_API_KEY="AIzaSyBRdxIaLObhS8_aJVymuui2cDu8rN2TLqk"
 
 export MPD_HOST="localhost"
 export MPD_PORT="6600"
