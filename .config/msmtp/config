@@ -1,0 +1,16 @@
+defaults
+auth           on
+tls            on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile        ~/.config/msmtp/msmtp.log
+
+account mxroute
+host           moose.mxrouting.net
+port           465
+from           suraj@bugswriter.com
+user           suraj@bugswriter.com
+passwordeval   "pass accounts/mail"
+tls_starttls   off
+tls_certcheck  on
+
+account default : mxroute
