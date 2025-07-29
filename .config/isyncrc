@@ -1,0 +1,29 @@
+# --- Remote IMAP account ---
+IMAPAccount mxroute
+Host moose.mxrouting.net
+Port 993
+User suraj@bugswriter.com
+PassCmd "pass accounts/mail"
+TLSType IMAPS
+AuthMechs LOGIN
+
+# --- Remote Store ---
+IMAPStore mxroute-remote
+Account mxroute
+
+# --- Local Maildir Store ---
+MaildirStore mxroute-local
+Path ~/mail/
+Inbox ~/mail/Inbox/
+SubFolders Verbatim
+Flatten .
+
+# --- Sync Channel ---
+Channel mxroute
+Far :mxroute-remote:
+Near :mxroute-local:
+Create Near
+SyncState *
+Sync All
+Expunge Both
+Remove Both
