@@ -11,16 +11,13 @@ export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
-export KODI_DATA="$XDG_DATA_HOME/kodi"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export PATH=$PATH:$HOME/.local/bin
-export GOOGLE_AI_API_KEY="AIzaSyBRdxIaLObhS8_aJVymuui2cDu8rN2TLqk"
 
-export MPD_HOST="localhost"
-export MPD_PORT="6600"
+export GNUPGHOME="$HOME/.gnupg"
+export PATH="$HOME/.local/bin:$PATH"
+export GPG_TTY=$(tty)
 
-# Mpd daemon start
-[ ! -s ~/.config/mpd/pid ] && mpd
 
 # Starting Wayland
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
