@@ -1,0 +1,19 @@
+#!/bin/sh
+# cleaner for lf + sixel previews
+
+# Clear preview area by overwriting with blank lines
+# $2 = height of preview area (lf passes cols/rows)
+if [ -n "$3" ]; then
+    # If lf passes height
+    lines="$3"
+else
+    # fallback to terminal height
+    lines=$(tput lines)
+fi
+
+# Move cursor to preview area and clear
+i=0
+while [ "$i" -lt "$lines" ]; do
+    printf '\n'
+    i=$((i+1))
+done
