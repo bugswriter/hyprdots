@@ -11,6 +11,13 @@ alias ls="ls --color=auto"
 bindkey -e 
 source $HOME/.config/shell/aliasrc
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-(cat ~/.cache/wal/sequences &)
+set -o allexport
+source ~/.env
+set +o allexport
+
+if [ -z "$TMUX" ]; then
+    (cat ~/.cache/wal/sequences &)
+fi
+[ -f ~/.cache/wal/colors.sh ] && source ~/.cache/wal/colors.sh
